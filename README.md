@@ -7,8 +7,9 @@ ASP.NET MVC Core Project With Entity Framework By Using Code First Approach Meth
 3. Microsoft sql server management studio
 
 # Pre-run
-1. Update sql connection string in appsettings.json file
-2. Make sure dependencies (Microsoft.EntityFrameworkCore.SqlServer, Microsoft.EntityFrameworkCore.Tools, Microsoft.VisualStudio.Web.CodeGeneration.Design) must be part of project
+1. Clone this repository from Github - https://github.com/Raviranjansah/Machine_test.git
+2. Update sql connection string in appsettings.json file
+3. Make sure dependencies (Microsoft.EntityFrameworkCore.SqlServer, Microsoft.EntityFrameworkCore.Tools, Microsoft.VisualStudio.Web.CodeGeneration.Design) must be part of project
 
 # Step to run 
 1. Run below command in package manager console to generate migration script
