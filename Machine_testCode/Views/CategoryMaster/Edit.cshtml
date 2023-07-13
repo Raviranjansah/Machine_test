@@ -1,0 +1,35 @@
+﻿@model Machine_test.Models.CategoryMaster
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class=" ="continer""> 
+   <div class=" row">
+       <div class="col-6 offset-3">
+           <div class="card-header-tabs">
+               <h1 class="text-center text-primary">Edit Category Details</h1>
+           </div>
+           <div class="card-body">
+               <form method="post" asp-action="Edit">
+                   
+                   <div class="form-group">
+                       <label asp-for="CategoryName"></label>
+                       <input type="hidden" asp-for="CategoryId" />
+                       <input type="text"asp-for="CategoryName" class=" form-control" placeholder="Edit category Name"/>
+                       <span asp-validation-for="CategoryName" class="text-danger"></span>
+                   </div>
+                   <div class="form-group">
+                       <label asp-for="Description"></label>
+                       <input type="text"asp-for="Description" class=" form-control" placeholder="Edit Description "/>
+                       <span asp-validation-for="Description" class="text-danger"></span>
+
+                   </div>
+                   <div class="form-group">
+                       <input type="submit" value="Submit" class="btn btn-sm btn-outline-success float-right" />
+                   </div>
+               </form>
+           </div>
+       </div>
+   </div>
+</div>

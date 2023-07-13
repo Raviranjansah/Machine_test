@@ -1,0 +1,77 @@
+﻿
+@model Machine_test.Models.ProductListsModel
+
+@{
+      ViewData["Title"] = "Index";
+}
+ 
+<!DOCTYPE html>
+ <div class=" ="continer""> 
+   <div class=" row">
+       <div class="col-8 offset-2">
+           <h1 class="text-center text-primary">Product List</h1>
+          
+             
+<html>
+@*<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>*@
+<body>
+    <div>
+        @using (Html.BeginForm("Index", "ProductList", FormMethod.Post))
+        {
+            <h4></h4>
+            <hr />
+                <table class="table-bordered" style="100%" >
+                <tr>
+                    <th>ProductId</th>
+                    <th>ProductName</th>
+                    <th>CategoryId</th>
+                    <th>CategoryName</th>
+                    
+                </tr>
+                @foreach (Products customer in Model.ProductData)
+                {
+                    <tr class="align-items-center">
+                        <td>@customer.ProductId</td>
+                        <td>@customer.ProductName</td>
+                        <td>@customer.CategoryId</td>
+                        <td>@customer.CategoryName</td>
+                       
+                    </tr>
+                }
+            </table>
+            <br />
+                <table class="table-bordered">
+                <tr>Pages 
+                    @for (int i = 1; i <= Model.PageCount; i++)
+                    {
+                        <td>
+                            @if (i != Model.CurrentPageIndex)
+                            {
+                                <a href="javascript:PagerClick(@i);" style="margin-left:5px">@i</a>
+                            }
+                            else
+                            {
+                                <span>@i</span>
+                            }
+                        </td>
+                    }
+                </tr>
+            </table>
+            <input type="hidden" id="hfCurrentPageIndex" name="currentPageIndex" />
+        }
+        <script type="text/javascript">
+            function PagerClick(index) {
+                document.getElementById("hfCurrentPageIndex").value = index;
+                document.forms[0].submit();
+            }
+        </script>
+    </div>
+</body>
+</html>
+</div>
+</div>
+</div>
+

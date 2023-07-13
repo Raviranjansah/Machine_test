@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Machine_test.Models.CategoryMaster>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class=" ="continer""> 
+   <div class=" row">
+       <div class="col-8 offset-2">
+           <h1 class="text-center text-primary">Caterory Master</h1>
+           <a class="btn btn-sm btn-success m-1" asp-controller="CategoryMaster" asp-action="Create"> CREATE </a>
+           <p class="text-center text-success m-1">@TempData["Error"]</p>
+           <table class="table-bordered">
+              <tr class="text-center">
+
+                   <th>CategoryId</th>
+                   <th>CategoryName</th>
+                   <th>Description</th>
+                   <th>Action</th>
+              </tr>
+              @foreach (var item in Model)
+              
+              
+              {
+                  <tr class="text-center">
+                          <td>
+                            @Html.DisplayFor(modelItem => item.CategoryId)
+                         </td>
+                          <td>
+                            @Html.DisplayFor(modelItem => item.CategoryName)
+                         </td>
+                         <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                         </td>
+                         <td>
+                                 <a class="btn btn-sm btn-warning"asp-controller="CategoryMaster" asp-action="Edit" asp-route-id="@item.CategoryId">Edit</a> |
+                                 <a class="btn btn-sm btn-warning"asp-controller="CategoryMaster" asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>
+                         </td>
+                              
+                            
+                  </tr>
+
+
+              }
+          </table>
+                 
+       </div>
+   </div>
+</div>
+                    
+                         
+
+
+
+
+

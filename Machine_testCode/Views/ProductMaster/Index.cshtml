@@ -1,0 +1,58 @@
+﻿
+@model IEnumerable<Machine_test.Models.ProductMaster>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class=" ="continer""> 
+   <div class=" row">
+       <div class="col-8 offset-2">
+           <h1 class="text-center text-primary">Product Master</h1>
+           <a class="btn btn-sm btn-success m-1" asp-controller="ProductMaster" asp-action="Create"> CREATE </a>
+           <p class="text-center text-success m-1">@TempData["Error"]</p>
+           <table class="table-bordered">
+              <tr class="text-center">
+
+                   <th>ProductId</th>
+                   <th>ProductName</th>
+                    <th>CategoryName</th>
+                   <th>Description</th>
+                   <th>Price</th>
+                   <th>Action</th>
+              </tr>
+                @foreach (var item in Model)
+
+
+                {
+                      <tr class="text-center">
+                              <td>
+                            @Html.DisplayFor(modelItem => item.ProductId)
+                             </td>
+                              <td>
+                            @Html.DisplayFor(modelItem => item.ProductName)
+                             </td>
+                             <td>
+                            @Html.DisplayFor(modelItem => item.CategoryName)
+                             </td>
+                             <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                             </td>
+                             <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                             </td>
+                             <td>
+                                     <a class="btn btn-sm btn-warning"asp-controller="ProductMaster" asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> 
+                                     <a class="btn btn-sm btn-warning"asp-controller="ProductMaster" asp-action="Delete" asp-route-id="@item.ProductId">Delete</a> 
+                             </td>
+                                 
+
+                      </tr>
+
+
+                }
+          </table>
+
+       </div>
+   </div>
+</div>
